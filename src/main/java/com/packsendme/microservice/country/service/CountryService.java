@@ -18,7 +18,7 @@ import com.packsendme.microservice.country.repository.CountryModel;
  
 
 @Service
-@ComponentScan(basePackages = {"com.packsendme.microservice.countryloc.dao"})
+@ComponentScan(basePackages = {"com.packsendme.microservice.country.dao"})
 public class CountryService {
 	
 	@Autowired
@@ -33,6 +33,19 @@ public class CountryService {
 					countryDto.getFormatnumbercountry());
 			country = countryDAO.add(country);
 			responseObj = new Response<CountryModel>(HttpExceptionPackSend.COUNTRY_CREATED.getAction(), country);
+			return new ResponseEntity<>(responseObj, HttpStatus.OK);
+		}
+		catch (MongoClientException e) {
+			e.printStackTrace();
+			return new ResponseEntity<>(responseObj, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	public ResponseEntity<?> saveCountryList(List<CountryModel> country) throws Exception {
+		Response<CountryModel> responseObj = null;
+		try {
+			countryDAO.addList(country);
+			responseObj = new Response<CountryModel>(HttpExceptionPackSend.COUNTRY_CREATED.getAction(), null);
 			return new ResponseEntity<>(responseObj, HttpStatus.OK);
 		}
 		catch (MongoClientException e) {

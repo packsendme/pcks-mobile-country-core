@@ -6,6 +6,8 @@ import java.util.List;
 public interface ICountryMongo<T> {
 
 	public T add(T entity);
+	
+	public void addList(List<T> entity);
 
 	public T find(T account);
 	
