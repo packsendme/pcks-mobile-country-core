@@ -1,5 +1,6 @@
 package com.packsendme.microservice.country;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -28,8 +29,14 @@ public class MicroserviceCountryServerApplication {
 		return args -> {
 			// read json and write to db
 			ObjectMapper mapper = new ObjectMapper();
+			
+			
 			TypeReference<List<CountryModel>> typeReference = new TypeReference<List<CountryModel>>(){};
+			System.out.println("TypeReference TESTES ");
+			
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/resources/country.json");
+			System.out.println("inputStream TESTES ");
+
 			try {
 				List<CountryModel> country = mapper.readValue(inputStream,typeReference);
 				System.out.println("country "+ country.size());
