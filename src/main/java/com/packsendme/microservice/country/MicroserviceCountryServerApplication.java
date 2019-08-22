@@ -28,14 +28,8 @@ public class MicroserviceCountryServerApplication {
 		return args -> {
 			// read json and write to db
 			ObjectMapper mapper = new ObjectMapper();
-			
-			
 			TypeReference<List<CountryModel>> typeReference = new TypeReference<List<CountryModel>>(){};
-			System.out.println("TypeReference TESTES ");
-			
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/country.json");
-			System.out.println("inputStream TESTES ");
-
 			try {
 				List<CountryModel> country = mapper.readValue(inputStream,typeReference);
 				System.out.println("country "+ country.size());
