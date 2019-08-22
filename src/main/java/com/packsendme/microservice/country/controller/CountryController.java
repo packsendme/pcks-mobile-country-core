@@ -23,13 +23,13 @@ public class CountryController {
 	
 	//** BEGIN OPERATION: PAYMENT METHOD *************************************************//
 
-	@PostMapping("/country/")
+	@PostMapping("/country")
 	public ResponseEntity<?> addCountry(@Validated @RequestBody CountryDto countryDto) throws Exception {
 		return countryService.saveCountry(countryDto);
 	}
 
 
-	@GetMapping("/country/")
+	@GetMapping("/country")
 	public ResponseEntity<?> loadCountries() throws Exception {
 		return countryService.getCountriesAll();
 	}

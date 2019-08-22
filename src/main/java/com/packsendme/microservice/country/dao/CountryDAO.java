@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.mongodb.MongoClientException;
 import com.packsendme.microservice.country.repository.CountryModel;
 import com.packsendme.microservice.country.repository.CountryRepository;
 
@@ -17,22 +18,39 @@ public class CountryDAO implements ICountryMongo<CountryModel> {
 
 	@Override
 	public CountryModel add(CountryModel entity) {
-		// TODO Auto-generated method stub
-		return null;
+		CountryModel country = null;
+		try {
+			country = countryRepository.insert(entity);
+		}
+		catch (MongoClientException e ) {
+			e.printStackTrace();
+		}
+		return country;
 	}
 
 	@Override
-	public CountryModel find(CountryModel account) {
-		// TODO Auto-generated method stub
-		return null;
+	public CountryModel find(CountryModel countryFind) {
+		CountryModel country = null;
+		try {
+			country = countryRepository.findCountryByCodNumber(countryFind.getCodcountry());
+		}
+		catch (MongoClientException e ) {
+			e.printStackTrace();
+		}
+		return country;
 	}
-	
-	 
 
+	
 	@Override
 	public List<CountryModel> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<CountryModel> countryL = null;
+		try {
+			countryL = countryRepository.findAll();
+		}
+		catch (MongoClientException e ) {
+			e.printStackTrace();
+		}
+		return countryL;
 	}
 
 	@Override
@@ -43,9 +61,27 @@ public class CountryDAO implements ICountryMongo<CountryModel> {
 
 	@Override
 	public CountryModel update(CountryModel entity) {
-		// TODO Auto-generated method stub
-		return null;
+		CountryModel country = null;
+		try {
+			country = countryRepository.save(entity);
+		}
+		catch (MongoClientException e ) {
+			e.printStackTrace();
+		}
+		return country;
 	}
+
+	@Override
+	public void addList(List<CountryModel> entity) {
+		try {
+			countryRepository.saveAll(entity);
+		}
+		catch (MongoClientException e ) {
+			e.printStackTrace();
+		}
+	}
+
+
 
 	
 
