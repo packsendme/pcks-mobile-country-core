@@ -32,6 +32,7 @@ public class MicroserviceCountryServerApplication {
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/resources/country.json");
 			try {
 				List<CountryModel> country = mapper.readValue(inputStream,typeReference);
+				System.out.println("country "+ country.size());
 				countryService.saveCountryList(country);
 				System.out.println("Users Saved!");
 			} catch (IOException e){

@@ -1,7 +1,14 @@
-{
-   "codcountry" : "+00",
-   "namecountry" : "teste (+93)",
-   "nameimagecountry" : "iconAfghanistan.png",
-   "formatnumbercountry" : "070 123 4567"
-}
-	
+[
+	{
+	   "codcountry" : "+00",
+	   "namecountry" : "teste (+00)",
+	   "nameimagecountry" : "iconAfghanistan.png",
+	   "formatnumbercountry" : "070 123 4567"
+	},
+	{
+	   "codcountry" : "+00",
+	   "namecountry" : "testando (+01)",
+	   "nameimagecountry" : "iconAfghanistan.png",
+	   "formatnumbercountry" : "070 123 4567"
+	}
+]	
