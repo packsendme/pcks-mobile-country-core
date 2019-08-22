@@ -125,4 +125,24 @@ public class CountryService {
 		}
 	}
 	
+	// Method used to testing
+	public int getTotalRegister() throws Exception {
+		try {
+			CountryListDTO countryDto = new CountryListDTO();
+			List<CountryModel> countryL = countryDAO.findAll();
+			
+			if(countryL != null){
+				countryDto.setCountries(countryL);
+				return countryL.size();
+			}
+			else {
+				return 0;
+			}
+		}
+		catch (MongoClientException e ) {
+			e.printStackTrace();
+			return -1;
+		}
+	}
+	
 }
