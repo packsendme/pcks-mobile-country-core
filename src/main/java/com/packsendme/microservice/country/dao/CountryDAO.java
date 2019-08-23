@@ -32,7 +32,9 @@ public class CountryDAO implements ICountryMongo<CountryModel> {
 	public CountryModel find(CountryModel countryFind) {
 		CountryModel country = null;
 		try {
-			country = countryRepository.findCountryByCodNumber(countryFind.getCodcountry());
+			country = countryRepository.findCountryByCodNumber(
+					countryFind.getIdcountry(),
+					countryFind.getCodcountry());
 		}
 		catch (MongoClientException e ) {
 			e.printStackTrace();

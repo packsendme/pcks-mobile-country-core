@@ -9,6 +9,7 @@ public class CountryDto implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private String idcountry;
 	private String codcountry;
 	private String namecountry;
 	private String nameimagecountry;
@@ -37,6 +38,12 @@ public class CountryDto implements Serializable {
 	}
 	public void setFormatnumbercountry(String formatnumbercountry) {
 		this.formatnumbercountry = formatnumbercountry;
+	}
+	public String getIdcountry() {
+		return idcountry;
+	}
+	public void setIdcountry(String idcountry) {
+		this.idcountry = idcountry;
 	}
 	
 	
