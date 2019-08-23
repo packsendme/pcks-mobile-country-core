@@ -32,17 +32,18 @@ public class MicroserviceCountryServerApplication {
 				// read json and write to db
 				ObjectMapper mapper = new ObjectMapper();
 				TypeReference<List<CountryModel>> typeReference = new TypeReference<List<CountryModel>>(){};
-				InputStream inputStream = TypeReference.class.getResourceAsStream("/country.json");
+				InputStream inputStream = TypeReference.class.getResourceAsStream("/country_US.json");
 				try {
 					List<CountryModel> country = mapper.readValue(inputStream,typeReference);
 					System.out.println("country "+ country.size());
 					countryService.saveCountryList(country);
 					System.out.println("Users Saved!");
-				} catch (IOException e){
+				} 
+				catch (IOException e){
 					System.out.println("Unable to save users: " + e.getMessage());
 				}
 			}
 		};
-		}
+	}
 }
 
