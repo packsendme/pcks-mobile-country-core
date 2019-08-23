@@ -29,8 +29,14 @@ public class CountryService {
 		Response<CountryModel> responseObj = null;
 		try {
 			
-			CountryModel country = new CountryModel(countryDto.getCodcountry(), countryDto.getNamecountry(), countryDto.getNameimagecountry(), 
-					countryDto.getFormatnumbercountry());
+			CountryModel country = new CountryModel(
+					countryDto.getIdcountry(), 
+					countryDto.getCodcountry(), 
+					countryDto.getNamecountry(), 
+					countryDto.getNameimagecountry(), 
+					countryDto.getFormatnumbercountry()
+					);
+			
 			country = countryDAO.add(country);
 			responseObj = new Response<CountryModel>(HttpExceptionPackSend.COUNTRY_CREATED.getAction(), country);
 			return new ResponseEntity<>(responseObj, HttpStatus.OK);
@@ -77,12 +83,10 @@ public class CountryService {
 		}
 	}
 	
-	public ResponseEntity<?> getCountryByCod(String codcountry) throws Exception {
+	public ResponseEntity<?> getCountryByCod(String idcountry, String codcountry) throws Exception {
 		Response<CountryModel> responseObj = null;
 		try {
-			CountryModel countryFind = new CountryModel(codcountry, null, null, null);
-			countryFind.setCodcountry(codcountry);
-			
+			CountryModel countryFind = new CountryModel(idcountry, codcountry, null, null, null);
 			CountryModel country = countryDAO.find(countryFind);
 			
 			if(country != null){

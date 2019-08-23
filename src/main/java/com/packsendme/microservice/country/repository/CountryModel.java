@@ -12,7 +12,7 @@ public class CountryModel implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+	private String idcountry;
 	private String codcountry;
 	private String namecountry;
 	private String nameimagecountry;
@@ -23,8 +23,9 @@ public class CountryModel implements Serializable {
 	}
 	
 	
-	public CountryModel(String codcountry, String namecountry, String nameimagecountry, String formatnumbercountry) {
+	public CountryModel(String idcountry, String codcountry, String namecountry, String nameimagecountry, String formatnumbercountry) {
 		super();
+		this.idcountry = idcountry;    
 		this.codcountry = codcountry;
 		this.namecountry = namecountry;
 		this.nameimagecountry = nameimagecountry;
@@ -55,6 +56,16 @@ public class CountryModel implements Serializable {
 	}
 	public void setFormatnumbercountry(String formatnumbercountry) {
 		this.formatnumbercountry = formatnumbercountry;
+	}
+
+
+	public String getIdcountry() {
+		return idcountry;
+	}
+
+
+	public void setIdcountry(String idcountry) {
+		this.idcountry = idcountry;
 	}
 	
 	
