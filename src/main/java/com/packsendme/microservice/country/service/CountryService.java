@@ -83,10 +83,10 @@ public class CountryService {
 		}
 	}
 	
-	public ResponseEntity<?> getCountryByCod(String idcountry, String codcountry) throws Exception {
+	public ResponseEntity<?> getCountryByCod(String idcountry) throws Exception {
 		Response<CountryModel> responseObj = null;
 		try {
-			CountryModel countryFind = new CountryModel(idcountry, codcountry, null, null, null);
+			CountryModel countryFind = new CountryModel(idcountry, null, null, null, null);
 			CountryModel country = countryDAO.find(countryFind);
 			
 			if(country != null){

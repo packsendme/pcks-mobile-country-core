@@ -34,11 +34,10 @@ public class CountryController {
 		return countryService.getCountriesAll();
 	}
 
-	@GetMapping("/country/{idcountry}/{codcountry}")
+	@GetMapping("/country/{idcountry}")
 	public ResponseEntity<?> changePaymentMethod(
-			@Validated @PathVariable ("idcountry") String idcountry,
-			@Validated @PathVariable ("codcountry") String codcountry) throws Exception {
-		return countryService.getCountryByCod(idcountry,codcountry);
+			@Validated @PathVariable ("idcountry") String idcountry) throws Exception {
+		return countryService.getCountryByCod(idcountry);
 	}
 	
 	
