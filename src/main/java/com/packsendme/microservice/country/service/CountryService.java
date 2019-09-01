@@ -38,7 +38,7 @@ public class CountryService {
 					);
 			
 			country = countryDAO.add(country);
-			responseObj = new Response<CountryModel>(HttpExceptionPackSend.COUNTRY_CREATED.getAction(), country);
+			responseObj = new Response<CountryModel>(0,HttpExceptionPackSend.COUNTRY_CREATED.getAction(), country);
 			return new ResponseEntity<>(responseObj, HttpStatus.OK);
 		}
 		catch (MongoClientException e) {
@@ -51,7 +51,7 @@ public class CountryService {
 		Response<CountryModel> responseObj = null;
 		try {
 			countryDAO.addList(country);
-			responseObj = new Response<CountryModel>(HttpExceptionPackSend.COUNTRY_CREATED.getAction(), null);
+			responseObj = new Response<CountryModel>(0,HttpExceptionPackSend.COUNTRY_CREATED.getAction(), null);
 			return new ResponseEntity<>(responseObj, HttpStatus.OK);
 		}
 		catch (MongoClientException e) {
@@ -68,17 +68,17 @@ public class CountryService {
 			
 			if(countryL != null){
 				countryDto.setCountries(countryL);
-				responseObj = new Response<CountryListDTO>(HttpExceptionPackSend.COUNTRY_FOUND.getAction(), countryDto);
+				responseObj = new Response<CountryListDTO>(0,HttpExceptionPackSend.COUNTRY_FOUND.getAction(), countryDto);
 				return new ResponseEntity<>(responseObj, HttpStatus.OK);
 			}
 			else {
-				responseObj = new Response<CountryListDTO>(HttpExceptionPackSend.COUNTRY_NOT_FOUND.getAction(), null);
+				responseObj = new Response<CountryListDTO>(0,HttpExceptionPackSend.COUNTRY_NOT_FOUND.getAction(), null);
 				return new ResponseEntity<>(responseObj, HttpStatus.NOT_FOUND);
 			}
 		}
 		catch (MongoClientException e ) {
 			e.printStackTrace();
-			responseObj = new Response<CountryListDTO>(HttpExceptionPackSend.FAIL_EXECUTION.getAction(), null);
+			responseObj = new Response<CountryListDTO>(0,HttpExceptionPackSend.FAIL_EXECUTION.getAction(), null);
 			return new ResponseEntity<>(responseObj, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -90,17 +90,17 @@ public class CountryService {
 			CountryModel country = countryDAO.find(countryFind);
 			
 			if(country != null){
-				responseObj = new Response<CountryModel>(HttpExceptionPackSend.COUNTRY_FOUND.getAction(), country);
+				responseObj = new Response<CountryModel>(0,HttpExceptionPackSend.COUNTRY_FOUND.getAction(), country);
 				return new ResponseEntity<>(responseObj, HttpStatus.OK);
 			}
 			else {
-				responseObj = new Response<CountryModel>(HttpExceptionPackSend.COUNTRY_NOT_FOUND.getAction(), null);
+				responseObj = new Response<CountryModel>(0,HttpExceptionPackSend.COUNTRY_NOT_FOUND.getAction(), null);
 				return new ResponseEntity<>(responseObj, HttpStatus.NOT_FOUND);
 			}
 		}
 		catch (MongoClientException e ) {
 			e.printStackTrace();
-			responseObj = new Response<CountryModel>(HttpExceptionPackSend.FAIL_EXECUTION.getAction(), null);
+			responseObj = new Response<CountryModel>(0,HttpExceptionPackSend.FAIL_EXECUTION.getAction(), null);
 			return new ResponseEntity<>(responseObj, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
