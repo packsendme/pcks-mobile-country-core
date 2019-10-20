@@ -11,14 +11,14 @@
 	   "codcountry" : "+355",
 	   "namecountry" : "Albania (+355)",
 	   "nameimagecountry" : "iconAlbania",
-	   "formatnumbercountry" : "066 212 3456"
+	   "formatnumbercountry" : "066 202 3456"
 	},
 	{
 	   "idcountry" : "DZ",
 	   "codcountry" : "+213",
 	   "namecountry" : "Algeria (+213)",
 	   "nameimagecountry" : "iconAlgeria",
-	   "formatnumbercountry" : "321 345"
+	   "formatnumbercountry" : "325 345"
 	},
 	{
 	   "idcountry" : "AD",
@@ -164,7 +164,7 @@
 	   "idcountry" : "DK",
 	   "codcountry" : "+45",
 	   "namecountry" : "Denmark (+45)",
-	   "nameimagecountry" : "iconsDenmark",
+	   "nameimagecountry" : "iconDenmark",
 	   "formatnumbercountry" : "20 12 34 56"
 	},
 	{
