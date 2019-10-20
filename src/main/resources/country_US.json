@@ -521,8 +521,8 @@
 	   "idcountry" : "RU",
 	   "codcountry" : "+7",
 	   "namecountry" : "Russia (+7)",
-	   "nameimagecountry" : "iconRussia",
-	   "formatnumbercountry" : "(07911) 123456"
+	   "nameimagecountry" : "iconRussian",
+	   "formatnumbercountry" : "(07911) 173456"
 	},
 	{
 	   "idcountry" : "SA",
