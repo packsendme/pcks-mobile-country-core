@@ -178,21 +178,21 @@
 	   "idcountry" : "EC",
 	   "codcountry" : "+593",
 	   "namecountry" : "Ecuador (+593)",
-	   "nameimagecountry" : "iconsEcuador",
+	   "nameimagecountry" : "iconEcuador",
 	   "formatnumbercountry" : "099 234 5678"
 	},
 	{
 	   "idcountry" : "EG",
 	   "codcountry" : "+20",
 	   "namecountry" : "Egypt (+20)",
-	   "nameimagecountry" : "iconsEgypt",
+	   "nameimagecountry" : "iconEgypt",
 	   "formatnumbercountry" : "0100 234 5678"
 	},
 	{
 	   "idcountry" : "EE",
 	   "codcountry" : "+372",
 	   "namecountry" : "Estonia (+372)",
-	   "nameimagecountry" : "iconsEstonia",
+	   "nameimagecountry" : "iconEstonia",
 	   "formatnumbercountry" : "5123 4567"
 	},
 	{
