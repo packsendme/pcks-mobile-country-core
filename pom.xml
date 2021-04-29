@@ -3,13 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.packsendme.microservice.country</groupId>
-	<artifactId>packsendme-country-server</artifactId>
+	<groupId>com.packsendme.microservice.mobile</groupId>
+	<artifactId>pcks-mobile-country-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>packsendme-country-server</name>
-	<description>Demo project for Spring Boot</description>
+	<name>pcks-mobile-country-core</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
