@@ -7,7 +7,7 @@ pipeline {
         ID_CONTAINER = null 
         PORT_CONTAINER = "9095:9095"
         ENV_DEPLOY = "167.172.152.184"
-        DIRECTORY + "/var/lib/jenkins/workspace/PackSendMe-EA/Domain-PCK/Mobile-PCKS/Microservice/Country-MS/country-pipeline-dev/target/"
+        DIRECTORY = "/var/lib/jenkins/workspace/PackSendMe-EA/Domain-PCK/Mobile-PCKS/Microservice/Country-MS/country-pipeline-dev/target/"
     }
 
     stages {
