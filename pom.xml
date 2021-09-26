@@ -83,8 +83,8 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>com.packsendme.lib.common</groupId>
-			<artifactId>packsendme-common-lib</artifactId>
+			<groupId>com.packsendme.crosscut.lib</groupId>
+			<artifactId>pcks-cross-commons-lib</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		
