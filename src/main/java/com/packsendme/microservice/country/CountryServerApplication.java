@@ -17,10 +17,10 @@ import com.packsendme.microservice.country.service.CountryService;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class MicroserviceCountryServerApplication {
+public class CountryServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicroserviceCountryServerApplication.class, args);
+		SpringApplication.run(CountryServerApplication.class, args);
 	}
 	
 	@Bean

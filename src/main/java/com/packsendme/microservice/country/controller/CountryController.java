@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.packsendme.microservice.country.dto.CountryDto;
@@ -14,6 +15,7 @@ import com.packsendme.microservice.country.service.CountryService;
 
 
 @RestController
+@RequestMapping("/account/country")
 public class CountryController {
 
 	
@@ -23,18 +25,18 @@ public class CountryController {
 	
 	//** BEGIN OPERATION: PAYMENT METHOD *************************************************//
 
-	@PostMapping("/country")
+	@PostMapping("/")
 	public ResponseEntity<?> addCountry(@Validated @RequestBody CountryDto countryDto) throws Exception {
 		return countryService.saveCountry(countryDto);
 	}
 
 
-	@GetMapping("/country")
+	@GetMapping("/")
 	public ResponseEntity<?> loadCountries() throws Exception {
 		return countryService.getCountriesAll();
 	}
 
-	@GetMapping("/country/{idcountry}")
+	@GetMapping("/{idcountry}")
 	public ResponseEntity<?> changePaymentMethod(
 			@Validated @PathVariable ("idcountry") String idcountry) throws Exception {
 		return countryService.getCountryByCod(idcountry);
